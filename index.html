@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="theme-color" content="#f5f6f2">
+    <meta name="theme-color" content="#f4f6f1">
     <meta name="description" content="Organiza tus próximos pagos y consulta cuánto falta para cada uno.">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -18,72 +18,52 @@
     <main class="app-shell">
       <header class="topbar">
         <a class="brand" href="#" aria-label="Mis pagos, inicio">
-          <span class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M7 3.75v3M17 3.75v3M4.75 9h14.5M6.5 5.5h11A1.75 1.75 0 0 1 19.25 7.25v11A1.75 1.75 0 0 1 17.5 20h-11a1.75 1.75 0 0 1-1.75-1.75v-11A1.75 1.75 0 0 1 6.5 5.5Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="m9.2 14 1.8 1.8 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-          <span class="brand-copy"><strong>Mis pagos</strong><small>Tu cuenta atrás mensual</small></span>
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 3.75v3M17 3.75v3M4.75 9h14.5M6.5 5.5h11A1.75 1.75 0 0 1 19.25 7.25v11A1.75 1.75 0 0 1 17.5 20h-11a1.75 1.75 0 0 1-1.75-1.75v-11A1.75 1.75 0 0 1 6.5 5.5Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="m9.2 14 1.8 1.8 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="brand-copy"><strong>Mis pagos</strong><small>Tu cuenta atrás</small></span>
         </a>
         <span class="local-badge"><span></span> Solo en este iPhone</span>
       </header>
 
       <section class="intro" aria-labelledby="page-title">
-        <div>
-          <p class="eyebrow">ORGANIZA TUS GASTOS</p>
-          <h1 id="page-title">Cada pago, bajo control.</h1>
-          <p class="intro-copy">Añade tus próximos pagos y ten siempre a mano cuánto falta.</p>
-        </div>
-        <button class="add-button" id="open-form" type="button">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-          <span>Añadir pago</span>
-        </button>
+        <div><p class="eyebrow">ORGANIZA TUS GASTOS</p><h1 id="page-title">Cada pago, bajo control.</h1></div>
+        <button class="add-button" id="open-form" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Añadir</span></button>
       </section>
 
       <section class="summary" aria-label="Resumen de pagos">
-        <div class="summary-main">
-          <div class="summary-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.25" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.2v5.15l3.3 1.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div><p class="summary-label">PRÓXIMO PAGO</p><p class="next-payment" id="next-payment">Aún no tienes pagos</p></div>
-        </div>
-        <div class="summary-total"><span id="total-label">Total en este apartado</span><strong id="total-amount">0,00&nbsp;€</strong></div>
+        <div class="summary-main"><span class="summary-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.25" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.2v5.15l3.3 1.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><p class="summary-label">PRÓXIMO PAGO</p><p class="next-payment" id="next-payment">Aún no tienes pagos</p></div></div>
+        <div class="summary-total"><span>Importe en pantalla</span><strong id="total-amount">0,00&nbsp;€</strong></div>
         <div class="summary-count"><strong id="payment-count">0</strong><span id="payment-count-label">pagos</span></div>
       </section>
 
       <nav class="category-tabs" aria-label="Apartados de gastos" role="tablist">
-        <button class="category-tab active" id="tab-personal" type="button" role="tab" aria-selected="true" aria-controls="payment-list" data-category="personal"><span class="tab-dot personal-dot"></span>Lo pago yo</button>
-        <button class="category-tab" id="tab-home" type="button" role="tab" aria-selected="false" aria-controls="payment-list" data-category="casa"><span class="tab-dot home-dot"></span>Casa a medias</button>
-        <button class="category-tab" id="tab-others" type="button" role="tab" aria-selected="false" aria-controls="payment-list" data-category="otros"><span class="tab-dot others-dot"></span>Con otras personas</button>
+        <button class="category-tab active" id="tab-personal" type="button" role="tab" aria-selected="true" aria-controls="payment-list" data-category="personal"><span class="tab-dot personal-dot"></span><span>Mi cuenta</span></button>
+        <button class="category-tab" id="tab-home" type="button" role="tab" aria-selected="false" aria-controls="payment-list" data-category="casa"><span class="tab-dot home-dot"></span><span>Cuenta Casa</span></button>
+        <div class="custom-tab-wrap"><button class="category-tab custom-tab" id="tab-others" type="button" role="tab" aria-selected="false" aria-controls="payment-list" data-category="otros"><span class="tab-dot others-dot"></span><span id="custom-category-label">+ Otro</span></button><button class="edit-category" id="edit-category" type="button" aria-label="Cambiar nombre del tercer apartado" title="Cambiar nombre" hidden><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m11.3 4.2 4.5 4.5M4.5 15.5l3.3-.7L16.2 6.4a1.6 1.6 0 0 0-2.3-2.3l-8.4 8.4-.9 3Z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
       </nav>
 
       <section class="list-section" aria-labelledby="list-heading">
-        <div class="list-heading-row">
-          <div><p class="eyebrow" id="list-eyebrow">TUS GASTOS PERSONALES</p><h2 id="list-heading">Próximos pagos</h2></div>
-          <span class="sort-label"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 5.5h11M6.5 10h7m-5 4.5h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Más próximo primero</span>
-        </div>
+        <div class="list-heading-row"><div><p class="eyebrow" id="list-eyebrow">TUS PRÓXIMOS PAGOS</p><h2 id="list-heading">Primero lo que llega antes</h2></div><span class="sort-label"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 5.5h11M6.5 10h7m-5 4.5h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> Por fecha</span></div>
         <div class="payment-list" id="payment-list" role="tabpanel" aria-labelledby="tab-personal"></div>
       </section>
 
-      <footer class="app-footer"><span>Hecho para que tus fechas no te pillen por sorpresa.</span><span class="privacy-note"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5.25 7V4.75a2.75 2.75 0 1 1 5.5 0V7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg> Tus datos se quedan en tu dispositivo</span></footer>
+      <footer class="app-footer"><span class="privacy-note"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M5.25 7V4.75a2.75 2.75 0 1 1 5.5 0V7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg> Tus datos se quedan en tu dispositivo</span><span class="color-key"><i class="key-red"></i>0–5 <i class="key-yellow"></i>6–20 <i class="key-green"></i>21–31 <i class="key-white"></i>32+ días</span></footer>
     </main>
 
     <div class="modal-backdrop" id="modal-backdrop" hidden>
       <section class="payment-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <div class="modal-handle" aria-hidden="true"></div>
         <div class="modal-heading"><div><p class="eyebrow">NUEVO RECORDATORIO</p><h2 id="modal-title">Añadir pago</h2></div><button class="icon-button close-modal" type="button" aria-label="Cerrar">×</button></div>
-        <p class="modal-copy">Apunta la fecha, el importe y para qué es. Ya te diremos cuánto falta.</p>
         <form id="payment-form">
-          <label class="field"><span>¿En qué apartado?</span><select id="form-category" name="category"><option value="personal">Lo pago yo</option><option value="casa">Casa a medias</option><option value="otros">Con otras personas</option></select></label>
-          <div class="field-row">
-            <label class="field"><span>Fecha de pago</span><input id="form-date" name="date" type="date" required></label>
-            <label class="field"><span>Importe (€)</span><input id="form-amount" name="amount" type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="0,00" required></label>
-          </div>
-          <label class="field"><span>¿Para qué es?</span><input id="form-description" name="description" type="text" maxlength="80" placeholder="Ej. Alquiler, luz, seguro..." autocomplete="off" required></label>
+          <label class="field"><span>Apartado</span><select id="form-category" name="category"><option value="personal">Mi cuenta</option><option value="casa">Cuenta Casa</option><option value="otros">Añadir apartado</option></select></label>
+          <label class="field"><span>Frecuencia</span><select id="form-frequency" name="frequency"><option value="once">Una fecha</option><option value="monthly">Cada mes</option><option value="multiple">Varias fechas</option></select></label>
+          <div class="field date-field"><label for="form-date" id="date-label">Fecha de pago</label><input id="form-date" name="date" type="date" required><small id="date-hint" hidden>Se repetirá cada mes. Si cae en sábado o domingo, se adelanta al viernes anterior.</small></div>
+          <div class="multi-date-tools" id="multi-date-tools" hidden><button class="secondary-button" id="add-date" type="button">＋ Añadir esta fecha</button><div class="date-chips" id="date-chips"></div><small>El importe y la descripción se aplicarán a todas las fechas.</small></div>
+          <div class="field-row"><label class="field"><span>Importe (€)</span><input id="form-amount" name="amount" type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="0,00" required></label><label class="field"><span>Descripción</span><input id="form-description" name="description" type="text" maxlength="80" placeholder="Ej. Alquiler" autocomplete="off" required></label></div>
           <p class="form-error" id="form-error" role="alert" hidden></p>
           <button class="save-button" type="submit">Guardar pago</button>
         </form>
       </section>
     </div>
-
     <script src="app.js" defer></script>
   </body>
 </html>

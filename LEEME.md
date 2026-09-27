@@ -1,25 +1,33 @@
 # Mis pagos
 
-Una página web gratuita que funciona como una pequeña app en iPhone. Los pagos se guardan en el navegador del dispositivo y no se envían a ningún servidor. Puedes añadir, editar y borrar pagos en tres apartados: **Lo pago yo**, **Casa a medias** y **Con otras personas**.
+Web app gratuita para iPhone. Los gastos se guardan en el navegador del dispositivo y no se envían a un servidor. Incluye tres apartados —**Mi cuenta**, **Cuenta Casa** y uno que puedes nombrar—, recordatorios únicos, mensuales y con varias fechas.
 
-## Publicarla gratis
+Los pagos mensuales muestran su próxima fecha. Si esa fecha cae en sábado o domingo, se adelanta al viernes anterior. Las tarjetas se ordenan por fecha y usan rojo para los próximos 0–5 días, amarillo para 6–20, verde para 21–31 y blanco para más de 31 días. La lista se desplaza dentro de la pantalla para que el encabezado y los apartados siempre permanezcan visibles.
 
-La carpeta está preparada para publicarse como sitio estático en **GitHub Pages** (gratis):
+## Publicar en GitHub Pages
 
-1. Crea una cuenta gratuita en [GitHub](https://github.com/) si aún no tienes una.
-2. Crea un repositorio público nuevo, por ejemplo `mis-pagos`.
-3. Sube el contenido de esta carpeta (`index.html`, `app.js`, `styles.css`, `manifest.webmanifest`, `service-worker.js` e `icon.svg`) a la raíz del repositorio.
-4. En el repositorio, abre **Settings → Pages** y elige **Deploy from a branch**, la rama `main` y la carpeta `/ (root)`. Guarda los cambios.
-5. GitHub te dará una dirección web parecida a `https://tu-usuario.github.io/mis-pagos/`.
+La carpeta se publica como sitio estático. En un repositorio público de GitHub Free:
+
+1. Sube el contenido de esta carpeta a la raíz del repositorio.
+2. Abre **Settings → Pages**.
+3. En **Build and deployment**, elige **Deploy from a branch**, rama `main` y carpeta `/ (root)`.
+4. Pulsa **Save** y espera a que el flujo de Pages termine correctamente en la pestaña **Actions**.
+
+La web tendrá una dirección similar a `https://tu-usuario.github.io/nombre-del-repositorio/`.
 
 ## Añadirla al iPhone
 
-1. Abre esa dirección en **Safari**.
-2. Toca **Compartir** (el cuadrado con la flecha hacia arriba).
-3. Elige **Añadir a pantalla de inicio** y confirma con **Añadir**.
+1. Abre la dirección de la web en Safari.
+2. Toca **Compartir** y luego **Añadir a pantalla de inicio**.
 
-La página necesita abrirse una primera vez con conexión para guardar la aplicación y luego podrá abrirse sin conexión. Cada navegador y dispositivo tiene su propia lista de pagos: los datos no se sincronizan entre distintos dispositivos. Si borras los datos del sitio en Safari, también se borrarán los pagos guardados.
+La primera visita requiere conexión. Después, la app puede abrirse sin conexión. Cada dispositivo mantiene sus propios gastos. Si borras los datos del sitio en Safari, también se borrarán los gastos guardados.
 
-## Probarla en un ordenador
+## Actualizar una web que ya está publicada
 
-Para probar la instalación y el modo sin conexión, sirve la carpeta mediante HTTPS o desde `localhost` (por ejemplo, con cualquier servidor local estático). Abrir el HTML como archivo no activa el modo sin conexión de la PWA.
+1. En el ordenador, abre la carpeta `gastos` del proyecto.
+2. En GitHub, abre tu repositorio y elige **Add file → Upload files**.
+3. Sube a la raíz los archivos actualizados `index.html`, `app.js`, `styles.css` y `service-worker.js`.
+4. Pulsa **Commit changes** para guardar la actualización.
+5. En **Actions**, espera a que **pages build and deployment** termine en verde. Luego recarga la web en Safari.
+
+Actualizar el código de la página no borra los gastos guardados en el iPhone.
